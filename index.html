@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jalumprit Site - Portal Komunitas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .hero-pattern {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    
+    .gallery-scroll::-webkit-scrollbar {
+      height: 8px;
+    }
+    
+    .gallery-scroll::-webkit-scrollbar-thumb {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 4px;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -20px;
+      top: 0;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #4f46e5;
+    }
+    
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-lg fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20">
+        <div class="flex items-center">
+          <a href="#" class="flex items-center space-x-2">
+            <div class="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center">
+              <span class="text-white font-bold text-xl">J</span>
+            </div>
+            <span class="text-2xl font-bold gradient-text">Jalumprit</span>
+          </a>
+        </div>
+        
+        <div class="hidden lg:flex items-center space-x-8">
+          <!-- Profil Dropdown -->
+          <div class="relative group">
+            <button class="inline-flex items-center space-x-1 font-semibold text-gray-700 hover:text-indigo-600 transition-colors">
+              <i class="fas fa-landmark"></i>
+              <span>Profil</span>
+              <i class="fas fa-chevron-down text-xs"></i>
+            </button>
+            <div class="absolute left-0 mt-3 w-48 bg-white rounded-xl shadow-2xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+              <a href="#sejarah" class="block px-6 py-3 hover:bg-indigo-50 rounded-t-xl"><i class="fas fa-history mr-2"></i>Sejarah</a>
+              <a href="#visi-misi" class="block px-6 py-3 hover:bg-indigo-50"><i class="fas fa-bullseye mr-2"></i>Visi Misi</a>
+              <a href="#peta-wilayah" class="block px-6 py-3 hover:bg-indigo-50 rounded-b-xl"><i class="fas fa-map mr-2"></i>Peta Wilayah</a>
+            </div>
+          </div>
+
+          <!-- Organisasi Dropdown -->
+          <div class="relative group">
+            <button class="inline-flex items-center space-x-1 font-semibold text-gray-700 hover:text-indigo-600 transition-colors">
+              <i class="fas fa-users"></i>
+              <span>Organisasi</span>
+              <i class="fas fa-chevron-down text-xs"></i>
+            </button>
+            <div class="absolute left-0 mt-3 w-48 bg-white rounded-xl shadow-2xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+              <a href="#dkm" class="block px-6 py-3 hover:bg-indigo-50 rounded-t-xl"><i class="fas fa-mosque mr-2"></i>DKM</a>
+              <a href="#pemuda" class="block px-6 py-3 hover:bg-indigo-50 rounded-b-xl"><i class="fas fa-user-friends mr-2"></i>Pemuda</a>
+            </div>
+          </div>
+
+          <!-- Informasi Dropdown -->
+          <div class="relative group">
+            <button class="inline-flex items-center space-x-1 font-semibold text-gray-700 hover:text-indigo-600 transition-colors">
+              <i class="fas fa-newspaper"></i>
+              <span>Informasi</span>
+              <i class="fas fa-chevron-down text-xs"></i>
+            </button>
+            <div class="absolute left-0 mt-3 w-48 bg-white rounded-xl shadow-2xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+              <a href="#berita" class="block px-6 py-3 hover:bg-indigo-50 rounded-t-xl"><i class="fas fa-newspaper mr-2"></i>Berita</a>
+              <a href="#agenda" class="block px-6 py-3 hover:bg-indigo-50 rounded-b-xl"><i class="fas fa-calendar-alt mr-2"></i>Agenda</a>
+            </div>
+          </div>
+
+          <a href="#galeri" class="font-semibold text-gray-700 hover:text-indigo-600 transition-colors">
+            <i class="fas fa-images"></i>
+            <span>Galeri</span>
+          </a>
+
+          <!-- Layanan Dropdown -->
+          <div class="relative group">
+            <button class="inline-flex items-center space-x-1 font-semibold text-gray-700 hover:text-indigo-600 transition-colors">
+              <i class="fas fa-hands-helping"></i>
+              <span>Layanan</span>
+              <i class="fas fa-chevron-down text-xs"></i>
+            </button>
+            <div class="absolute left-0 mt-3 w-48 bg-white rounded-xl shadow-2xl opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+              <a href="#layanan" class="block px-6 py-3 hover:bg-indigo-50 rounded-t-xl"><i class="fas fa-comment-dots mr-2"></i>Portal Aduan</a>
+              <a href="#layanan" class="block px-6 py-3 hover:bg-indigo-50 rounded-b-xl"><i class="fas fa-question-circle mr-2"></i>Bantuan</a>
+            </div>
+          </div>
+
+          <a href="#kontak" class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition-colors font-semibold">
+            <i class="fas fa-phone-alt mr-2"></i>Kontak
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div id ="mobile-menu-toggle" class="flex items-center lg:hidden">
+          <button id="mobile-menu-button" class="text-gray-700 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600 p-2 rounded-lg">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  
+     
+        
+       
+   
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 w-64 bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 lg:hidden">
+        <div class="flex justify-end p-4">
+            <button id="mobile-menu-close" class="text-gray-600 focus:outline-none">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+        </div>
+        <nav class="px-6 py-6 space-y-4">
+            <!-- Profil Dropdown -->
+            <details class="group">
+                <summary class="font-semibold cursor-pointer flex justify-between items-center py-3 px-4 bg-gray-50 rounded-lg">
+                    <span><i class="fas fa-landmark mr-3"></i>Profil</span>
+                    <i class="fas fa-chevron-down transition-transform group-open:rotate-180"></i>
+                </summary>
+                <div class="pl-8 mt-2 space-y-2">
+                    <a href="#sejarah" class="block py-2 hover:text-indigo-600"><i class="fas fa-history mr-2"></i>Sejarah</a>
+                    <a href="#visi-misi" class="block py-2 hover:text-indigo-600"><i class="fas fa-bullseye mr-2"></i>Visi Misi</a>
+                    <a href="#peta-wilayah" class="block py-2 hover:text-indigo-600"><i class="fas fa-map mr-2"></i>Peta Wilayah</a>
+                </div>
+            </details>
+
+            <!-- Organisasi Dropdown -->
+            <details class="group">
+                <summary class="font-semibold cursor-pointer flex justify-between items-center py-3 px-4 bg-gray-50 rounded-lg">
+                    <span><i class="fas fa-users mr-3"></i>Organisasi</span>
+                    <i class="fas fa-chevron-down transition-transform group-open:rotate-180"></i>
+                </summary>
+                <div class="pl-8 mt-2 space-y-2">
+                    <a href="#dkm" class="block py-2 hover:text-indigo-600"><i class="fas fa-mosque mr-2"></i>DKM</a>
+                    <a href="#pemuda" class="block py-2 hover:text-indigo-600"><i class="fas fa-user-friends mr-2"></i>Pemuda</a>
+                </div>
+            </details>
+
+            <!-- Informasi Dropdown -->
+            <details class="group">
+                <summary class="font-semibold cursor-pointer flex justify-between items-center py-3 px-4 bg-gray-50 rounded-lg">
+                    <span><i class="fas fa-newspaper mr-3"></i>Informasi</span>
+                    <i class="fas fa-chevron-down transition-transform group-open:rotate-180"></i>
+                </summary>
+                <div class="pl-8 mt-2 space-y-2">
+                    <a href="#berita" class="block py-2 hover:text-indigo-600"><i class="fas fa-newspaper mr-2"></i>Berita</a>
+                    <a href="#agenda" class="block py-2 hover:text-indigo-600"><i class="fas fa-calendar-alt mr-2"></i>Agenda</a>
+                </div>
+            </details>
+
+            <!-- Galeri Link -->
+            <a href="#galeri" class="block font-semibold py-3 px-4 bg-gray-50 rounded-lg">
+                <i class="fas fa-images mr-3"></i>Galeri
+            </a>
+
+            <!-- Layanan Dropdown -->
+            <details class="group">
+                <summary class="font-semibold cursor-pointer flex justify-between items-center py-3 px-4 bg-gray-50 rounded-lg">
+                    <span><i class="fas fa-hands-helping mr-3"></i>Layanan</span>
+                    <i class="fas fa-chevron-down transition-transform group-open:rotate-180"></i>
+                </summary>
+                <div class="pl-8 mt-2 space-y-2">
+                    <a href="#layanan" class="block py-2 hover:text-indigo-600"><i class="fas fa-comment-dots mr-2"></i>Portal Aduan</a>
+                    <a href="#layanan" class="block py-2 hover:text-indigo-600"><i class="fas fa-question-circle mr-2"></i>Bantuan</a>
+                </div>
+            </details>
+
+            <!-- Kontak Link -->
+            <a href="#kontak" class="block bg-indigo-600 text-white py-3 px-4 rounded-lg text-center font-semibold">
+                <i class="fas fa-phone-alt mr-2"></i>Hubungi Kami
+            </a>
+        </nav>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-pattern text-white pt-32 pb-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      
+      <!-- Teks Hero -->
+      <div class="space-y-6">
+        <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
+          Selamat Datang di<br>
+          <span class="text-yellow-300">Jalumprit Site</span>
+        </h1>
+        <p class="text-xl opacity-90 leading-relaxed">
+          Portal komunitas yang membangun sinergi dan kemajuan bersama. 
+          Mari kita wujudkan lingkungan yang harmonis dan sejahtera.
+        </p>
+
+        <!-- Tombol CTA -->
+        <div class="flex flex-wrap gap-4">
+          <a 
+            href="#profil" 
+            class="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold 
+                   hover:bg-gray-100 transition-colors"
+          >
+            <i class="fas fa-explore mr-2"></i>Explore Sekarang
+          </a>
+          <a 
+            href="#kontak" 
+            class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold 
+                   hover:bg-white hover:text-indigo-600 transition-colors"
+          >
+            <i class="fas fa-users mr-2"></i>Bergabung
+          </a>
+        </div>
+      </div>
+
+      <!-- Gambar Hero -->
+      <div class="relative">
+        <div class="animate-float">
+          <img 
+            src="img/tes.jpg" 
+            alt="Ilustrasi komunitas Jalumprit dengan orang-orang berkumpul dan bekerja sama dalam lingkungan yang harmonis" 
+            class="rounded-2xl shadow-2xl" 
+          />
+        </div>
+
+        <!-- Badge Anggota -->
+        <div class="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2">
+          <span class="bg-white text-indigo-600 px-4 py-2 rounded-full font-semibold">
+            <i class="fas fa-users mr-2"></i>Anggota: 100+
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  <!-- Main content -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 py-16">
+
+    <!-- Profil Section -->
+    <section id="profil" class="space-y-16">
+      <div class="text-center">
+        <h2 class="text-4xl font-bold gradient-text inline-block">Profil Jalumprit</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Menjelajahi sejarah, visi, dan wilayah komunitas Jalumprit</p>
+      </div>
+
+      <!-- Sejarah -->
+      <article id="sejarah" class="bg-white rounded-2xl p-8 shadow-lg">
+        <div class="flex items-center space-x-4 mb-6">
+          <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-history text-indigo-600 text-xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-900">Sejarah Jalumprit</h3>
+        </div>
+        
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div class="space-y-6">
+            <p class="text-gray-700 leading-relaxed">
+              Komunitas Jalumprit berdiri pada tanggal 15 Juni 1990 dengan semangat kebersamaan yang kuat. Awalnya merupakan perkumpulan kecil warga yang peduli terhadap lingkungan sekitar.
+            </p>
+            
+            <div class="space-y-4">
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <i class="fas fa-check text-indigo-600 text-xs"></i>
+                </div>
+                <p class="text-gray-700">Tahun 1995: Pembentukan struktur organisasi formal</p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <i class="fas fa-check text-indigo-600 text-xs"></i>
+                </div>
+                <p class="text-gray-700">Tahun 2000: Perluasan program sosial dan pendidikan</p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-6 h-6 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <i class="fas fa-check text-indigo-600 text-xs"></i>
+                </div>
+                <p class="text-gray-700">Tahun 2010: Pengembangan fasilitas komunitas modern</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="relative">
+            <img src="img/1.png"Foto sejarah komunitas Jalumprit menunjukkan perkembangan dari tahun ke tahun" class="rounded-lg shadow-md" />
+            <div class="absolute bottom-4 left-4 bg-black bg-opacity-70 text-white p-3 rounded-lg">
+              <p class="text-sm">Foto dokumentasi tahun 2016</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Visi Misi -->
+      <article id="visi-misi" class="bg-white rounded-2xl p-8 shadow-lg">
+        <div class="flex items-center space-x-4 mb-6">
+          <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-bullseye text-indigo-600 text-xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-900">Visi & Misi</h3>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Visi -->
+          <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-xl">
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center">
+                <i class="fas fa-eye text-white"></i>
+              </div>
+              <h4 class="text-xl font-semibold text-indigo-800">Visi</h4>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+              "Menjadi komunitas yang mandiri, berdaya saing, dan berkontribusi positif dalam membangun masyarakat yang harmonis, sejahtera, dan berkelanjutan."
+            </p>
+          </div>
+
+          <!-- Misi -->
+          <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl">
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center">
+                <i class="fas fa-tasks text-white"></i>
+              </div>
+              <h4 class="text-xl font-semibold text-purple-800">Misi</h4>
+            </div>
+            <ul class="space-y-3">
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <span class="text-gray-700">Meningkatkan kualitas pendidikan dan keterampilan anggota</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <span class="text-gray-700">Mengembangkan program sosial dan ekonomi kreatif</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <span class="text-gray-700">Memperkuat jaringan kemitraan dengan berbagai pihak</span>
+              </li>
+              <li class="flex items-start space-x-2">
+                <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                <span class="text-gray-700">Melestarikan nilai-nilai budaya dan kearifan lokal</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Peta Wilayah -->
+      <article id="peta-wilayah" class="bg-white rounded-2xl p-8 shadow-lg">
+        <div class="flex items-center space-x-4 mb-6">
+          <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-map text-indigo-600 text-xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-900">Peta Wilayah</h3>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div class="space-y-6">
+            <p class="text-gray-700 leading-relaxed">
+              Komunitas Jalumprit berada di wilayah strategis dengan akses mudah ke berbagai fasilitas umum. Berikut adalah detail wilayah kami:
+            </p>
+            
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <div class="flex items-center space-x-2 mb-2">
+                  <i class="fas fa-ruler-combined text-indigo-600"></i>
+                  <span class="font-semibold">Luas Wilayah</span>
+                </div>
+                <p class="text-gray-700">15 Hektar</p>
+              </div>
+              
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <div class="flex items-center space-x-2 mb-2">
+                  <i class="fas fa-users text-indigo-600"></i>
+                  <span class="font-semibold">Populasi</span>
+                </div>
+                <p class="text-gray-700">2,500 Jiwa</p>
+              </div>
+              
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <div class="flex items-center space-x-2 mb-2">
+                  <i class="fas fa-home text-indigo-600"></i>
+                  <span class="font-semibold">Rumah</span>
+                </div>
+                <p class="text-gray-700">650 Unit</p>
+              </div>
+              
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <div class="flex items-center space-x-2 mb-2">
+                  <i class="fas fa-building text-indigo-600"></i>
+                  <span class="font-semibold">Fasilitas</span>
+                </div>
+                <p class="text-gray-700">25+ Fasilitas</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="relative">
+            <div class="w-full h-80 rounded-xl overflow-hidden shadow-md">
+              <iframe class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.7840198883841!2d106.06570844442749!3d-6.053838799999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e418c210e25a911%3A0x56bb3e6f39fc4991!2sMasjid%20Baitul%20Maal%20Jalumprit!5e0!3m2!1sid!2sid!4v1756610324255!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="absolute top-4 right-4 bg-white p-3 rounded-lg shadow-md">
+              <p class="text-sm font-semibold text-gray-700">📍 Lokasi Kami</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Organisasi Section -->
+    <section id="organisasi" class="space-y-16">
+      <div class="text-center">
+        <h2 class="text-4xl font-bold gradient-text inline-block">Struktur Organisasi</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Menghadirkan kepengurusan yang solid dan profesional</p>
+      </div>
+
+      <!-- DKM -->
+      <article id="dkm" class="bg-white rounded-2xl p-8 shadow-lg">
+        <div class="flex items-center space-x-4 mb-8">
+          <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-mosque text-green-600 text-xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-900"> Masjid Baitul Maal (DKM)</h3>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div class="space-y-6">
+            <p class="text-gray-700 leading-relaxed">
+              DKM Jalumprit mengelola kegiatan keagamaan dan sosial masjid dengan penuh dedikasi. Kami memiliki program rutin dan pengajian yang mendukung spiritualitas anggota.
+            </p>
+            
+            <div class="bg-green-50 p-6 rounded-xl">
+              <h4 class="font-semibold text-green-800 mb-4">Program Unggulan</h4>
+              <ul class="space-y-3">
+                <li class="flex items-center space-x-3">
+                  <i class="fas fa-circle text-green-500 text-xs"></i>
+                  <span>Pengajian Rutin Mingguan</span>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <i class="fas fa-circle text-green-500 text-xs"></i>
+                  <span>TPA (Taman Pendidikan Al-Quran)</span>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <i class="fas fa-circle text-green-500 text-xs"></i>
+                  <span>Bantuan Sosial Ramadhan</span>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <i class="fas fa-circle text-green-500 text-xs"></i>
+                  <span>Kegiatan Maulid Nabi</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="text-center p-6 bg-white rounded-xl shadow-md card-hover">
+              <img src="img/user.png" alt="Foto Ketua DKM Jalumprit" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+              <h4 class="font-semibold text-gray-900">Nama</h4>
+              <p class="text-green-600 font-medium">Ketua DKM</p>
+              <p class="text-sm text-gray-600 mt-2">Menjabat sejak 20XX</p>
+            </div>
+            
+            <div class="text-center p-6 bg-white rounded-xl shadow-md card-hover">
+              <img src="img/user.png" alt="Foto Sekretaris DKM Jalumprit" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+              <h4 class="font-semibold text-gray-900">Nama</h4>
+              <p class="text-green-600 font-medium">Sekretaris</p>
+              <p class="text-sm text-gray-600 mt-2">Menjabat sejak 2021</p>
+            </div>
+                     <div class="flex justify-center items-center mt-8">
+  <a 
+    href="dkm.html" 
+    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out"
+  >
+    <i class="fas fa-users mr-2"></i>Lihat Selengkapnya
+  </a>
+</div> 
+          </div>
+
+        </div>
+      </article>
+
+      <!-- Pemuda -->
+      <article id="pemuda" class="bg-white rounded-2xl p-8 shadow-lg">
+        <div class="flex items-center space-x-4 mb-8">
+          <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-user-friends text-blue-600 text-xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-900">Persatuan Pemuda Jalumprit (PPJ)</h3>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div class="space-y-6">
+            <p class="text-gray-700 leading-relaxed">
+              Pemuda Jalumprit adalah motor penggerak perubahan dengan semangat muda yang penuh inovasi. Kami fokus pada pengembangan diri, olahraga, dan kegiatan sosial.
+            </p>
+            
+            <div class="bg-blue-50 p-6 rounded-xl">
+              <h4 class="font-semibold text-blue-800 mb-4">Kegiatan Rutin</h4>
+              <ul class="space-y-3">
+                <li class="flex items-center space-x-3">
+                  <i class="fas fa-circle text-blue-500 text-xs"></i>
+                  <span>Latihan Futsal Mingguan</span>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <i class="fas fa-circle text-blue-500 text-xs"></i>
+                  <span>Diskusi Pemuda</span>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <i class="fas fa-circle text-blue-500 text-xs"></i>
+                  <span>Bakti Sosial</span>
+                </li>
+                <li class="flex items-center space-x-3">
+                  <i class="fas fa-circle text-blue-500 text-xs"></i>
+                  <span>Pelatihan Wirausaha</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="text-center p-6 bg-white rounded-xl shadow-md card-hover">
+              <img src="img/user.png" alt="Foto Ketua Pemuda Jalumprit" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+              <h4 class="font-semibold text-gray-900">Bpk. Ketua</h4>
+              <p class="text-blue-600 font-medium">Ketua Pemuda</p>
+              <p class="text-sm text-gray-600 mt-2">Menjabat sejak 20XX</p>
+            </div>
+            
+            <div class="text-center p-6 bg-white rounded-xl shadow-md card-hover">
+              <img src="img/user.png" alt="Foto Bendahara Pemuda Jalumprit" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover" />
+              <h4 class="font-semibold text-gray-900">Bpk. Bendahara</h4>
+              <p class="text-blue-600 font-medium">Bendahara</p>
+              <p class="text-sm text-gray-600 mt-2">Menjabat sejak 20XX</p>
+            </div>
+                      <div class="flex justify-center items-center mt-8">
+  <a 
+    href="pemuda.html" 
+    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out"
+  >
+    <i class="fas fa-users mr-2"></i>Lihat Selengkapnya
+  </a>
+</div>
+          </div>
+
+        </div>
+      </article>
+      
+    </section>
+
+    <!-- Informasi Section -->
+    <section id="informasi" class="space-y-16">
+      <div class="text-center">
+        <h2 class="text-4xl font-bold gradient-text inline-block">Informasi Terkini</h2>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Update terbaru kegiatan dan berita komunitas</p>
+      </div>
+
+      <!-- Berita -->
+      <article id="berita" class="bg-white rounded-2xl p-8 shadow-lg">
+        <div class="flex items-center space-x-4 mb-8">
+          <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-newspaper text-red-600 text-xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-900">Berita Terbaru</h3>
+        </div>
+
+        <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+          <!-- Berita 1 -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a27160b8-73c6-4f9c-8973-20930d91d51c.png" alt="Kegiatan pelatihan wirausaha pemuda Jalumprit dengan peserta yang antusias" class="w-full h-48 object-cover" />
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-sm text-red-600 font-semibold">PEMUDA</span>
+                <span class="text-sm text-gray-500">15 Mei 2024</span>
+              </div>
+              <h4 class="font-semibold text-lg mb-2">Pelatihan Wirausaha Muda Sukses Digelar</h4>
+              <p class="text-gray-600 text-sm mb-4">Pelatihan wirausaha untuk pemuda berlangsung sukses dengan 50 peserta...</p>
+              <a href="#" class="text-red-600 font-semibold text-sm hover:underline">Baca Selengkapnya →</a>
+            </div>
+          </div>
+
+          <!-- Berita 2 -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3f0d8924-498f-4370-82c3-0db390d3e8f3.png" alt="Kegiatan bakti sosial DKM Jalumprit membagikan sembako kepada warga" class="w-full h-48 object-cover" />
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-sm text-green-600 font-semibold">DKM</span>
+                <span class="text-sm text-gray-500">10 Mei 2024</span>
+              </div>
+              <h4 class="font-semibold text-lg mb-2">Bakti Sosial Ramadhan 2024</h4>
+              <p class="text-gray-600 text-sm mb-4">DKM Jalumprit sukses membagikan 200 paket sembako kepada warga...</p>
+              <a href="#" class="text-green-600 font-semibold text-sm hover:underline">Baca Selengkapnya →</a>
+            </div>
+          </div>
+
+          <!-- Berita 3 -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e7e507b9-13fa-43de-b493-d76c3f5b7765.png" alt="Turnamen futsal antar RT yang diselenggarakan oleh pemuda Jalumprit" class="w-full h-48 object-cover" />
+            <div class="p-6">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-sm text-blue-600 font-semibold">OLAHRAGA</span>
+                <span class="text-sm text-gray-500">5 Mei 2024</span>
+              </div>
+              <h4 class="font-semibold text-lg mb-2">Turnamen Futsal Antar RT Dimulai</h4>
+              <p class="text-gray-600 text-sm mb-4">Turnamen futsal tahunan kembali digelar dengan 16 tim peserta...</p>
+              <a href="#" class="text-blue-600 font-semibold text-sm hover:underline">Baca Selengkapnya →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="#" class="inline-flex items-center space-x-2 bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors">
+            <i class="fas fa-list"></i>
+            <span>Lihat Semua Berita</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Agenda -->
+      <article id="agenda" class="bg-white rounded-2xl p-8 shadow-lg">
+        <div class="flex items-center space-x-4 mb-8">
+          <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-calendar-alt text-purple-600 text-xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-900">Agenda Kegiatan</h3>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-gray-50">
+                <th class="px-6 py-4 text-left font-semibold text-gray-700">Tanggal</th>
+                <th class="px-6 py-4 text-left font-semibold text-gray-700">Kegiatan</th>
+                <th class="px-6 py-4 text-left font-semibold text-gray-700">Lokasi</th>
+                <th class="px-6 py-4 text-left font-semibold text-gray-700">Waktu</th>
+                <th class="px-6 py-4 text-left font-semibold text-gray-700">Status</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 font-medium">20 Juni 2024</td>
+                <td class="px-6 py-4">Rapat Koordinasi Pemuda</td>
+                <td class="px-6 py-4">Aula Pemuda</td>
+                <td class="px-6 py-4">19:00 WIB</td>
+                <td class="px-6 py-4"><span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Akan Datang</span></td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="px-6 py-4 font-medium">25 Juni 2024</td>
+                <td class="px-6 py-4">Pengajian Rutin DKM</td>
+                <td class="px-6 py-4">Masjid Baitul Maal</td>
+                <td class="px-6 py-4">20:00 WIB</td>
+                <td class="px-6 py-4"><span class="bg-blue-100 text-blue-800 px-3 py-1
+                  rounded-full text-sm">Akan Datang</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="#" class="inline-flex items-center space-x-2 bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors">
+            <i class="fas fa-list"></i>
+            <span>Lihat Semua Agenda</span>
+          </a>
+        </div>
+      </article>
+
+
+
+    </section>
+
+
+      <!-- Galeri-->
+       <section id="galeri" class="bg-white rounded-2xl p-8 shadow-lg">
+        <div class="flex items-center space-x-4 mb-8">
+          <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-images text-red-600 text-xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-900">Galeri Foto</h3>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4">
+          <img src="img/IMG-20190728-WA0012.jpg" alt="Foto 1" class="w-full h-32 object-cover" />
+          <img src="img/IMG-20190730-WA0046.jpg" alt="Foto 2" class="w-full h-32 object-cover" />
+          <img src="img/IMG-20190730-WA0047.jpg" alt="Foto 3" class="w-full h-32 object-cover" />
+          <img src="img/IMG-20190730-WA0048.jpg" alt="Foto 4" class="w-full h-32 object-cover" />
+          <img src="img/IMG-20190730-WA0050.jpg" alt="Foto 5" class="w-full h-32 object-cover" />
+          <img src="img/IMG-20190818-WA0014.jpg" alt="Foto 6" class="w-full h-32 object-cover" />
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="#" class="inline-flex items-center space-x-2 bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors">
+            <i class="fas fa-list"></i>
+            <span>Lihat Semua Galeri</span>
+          </a>
+        </div>
+      </section>
+
+      <!--Layanan-->
+      <section id="layanan" class="bg-white rounded-3xl p-8 shadow-2xl">
+            <div class="flex flex-col items-center text-center mb-8">
+                <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg mb-4">
+                    <i class="fas fa-hands-helping text-white text-3xl"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-gray-900 mb-2">Layanan Kami</h3>
+                <p class="text-gray-500 text-sm md:text-base max-w-xl">Kami siap membantu dengan berbagai layanan. Pilih layanan di bawah ini untuk memulai.</p>
+            </div>
+    
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Portal Aduan Card -->
+                <div id="layanan" class="bg-gradient-to-br from-red-100 to-rose-100 p-8 rounded-2xl shadow-lg transform transition-transform duration-200 hover:scale-105 hover:shadow-2xl cursor-pointer">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-14 h-14 bg-red-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-comment-dots text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-red-800">Portal Aduan</h4>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">Laporkan masalah, berikan masukan, atau sampaikan keluhan Anda. Kami akan menindaklanjutinya dengan cepat dan profesional.</p>
+                    <a href="portal-aduan.html" class="mt-4 inline-block text-red-600 font-semibold hover:text-red-700 transition-colors">
+                        Sampaikan Aduan <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+    
+                <!-- Bantuan Card -->
+                <div id="layanan" class="bg-gradient-to-br from-sky-100 to-blue-100 p-8 rounded-2xl shadow-lg transform transition-transform duration-200 hover:scale-105 hover:shadow-2xl cursor-pointer">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-question-circle text-white text-2xl"></i>
+                        </div>
+                        <h4 class="text-2xl font-bold text-blue-800">Pusat Bantuan</h4>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed">Temukan jawaban atas pertanyaan umum atau hubungi tim dukungan kami untuk mendapatkan bantuan langsung.</p>
+                    <a href="bantuan.html" class="mt-4 inline-block text-blue-600 font-semibold hover:text-blue-700 transition-colors">
+                        Cari Bantuan <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+      <!-- Kontak -->
+      <article id="kontak" class="bg-white rounded-2xl p-8 shadow-lg">
+        <div class="flex items-center space-x-4 mb-8">
+          <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+            <i class="fas fa-phone text-green-600 text-xl"></i>
+          </div>
+          <h3 class="text-2xl font-semibold text-gray-900">Kontak Kami</h3>
+        </div>
+
+        <div class="grid grid-cols-2 gap-6">
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+              <i class="fas fa-map-marker-alt text-gray-600 text-xl"></i>
+            </div>
+            <div class="text-gray-600 text-sm">
+              <p class="font-semibold">Alamat:</p>
+              <p>Jl. Raya Jalumprit, RT 01 RW 01, Kec. Jalumprit, Kabupaten Pasuruan, Jawa Timur 67113</p>
+            </div>
+          </div>          
+          <div class="flex items-center space-x-4">
+            <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
+              <i class="fas fa-phone text-gray-600 text-xl"></i>
+            </div>
+            <div class="text-gray-600 text-sm">
+              <p class="font-semibold">Telepon:</p>
+              <p>(0341) 421-421</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="bg-gray-800 text-white py-4">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2025 Jalumprit | Powered by Anis Muhadi. All rights reserved.</p>
+    </div>
+  </footer>
+
+   <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const toggleButton = document.getElementById('mobile-menu-toggle');
+            const closeButton = document.getElementById('mobile-menu-close');
+
+            const toggleMenu = () => {
+                mobileMenu.classList.toggle('translate-x-full');
+            };
+
+            toggleButton.addEventListener('click', toggleMenu);
+            closeButton.addEventListener('click', toggleMenu);
+
+            // Close menu when a link is clicked
+            const navLinks = mobileMenu.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    toggleMenu();
+                });
+            });
+        });
+    </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+</body> 
+</html>
+
+
+
