@@ -63,6 +63,23 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
+
+    /* Transisi halus untuk gambar utama */
+#slide-image {
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Thumbnail aktif dengan border dan shadow */
+#galeri img.border-indigo-600 {
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.7);
+}
+
+/* Hover effect thumbnail */
+#galeri img:hover {
+  border-color: #6366f1; /* indigo-500 */
+  box-shadow: 0 0 6px rgba(99, 102, 241, 0.5);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
