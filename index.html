@@ -714,42 +714,59 @@
 
 
       <!-- Galeri-->
-       <section id="galeri" class="bg-white rounded-2xl p-8 shadow-lg">
-        <div class="flex items-center space-x-4 mb-8">
-          <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
-            <i class="fas fa-images text-red-600 text-xl"></i>
-          </div>
-          <h3 class="text-2xl font-semibold text-gray-900">Galeri Foto</h3>
-        </div>
+       <section id="galeri" class="bg-white rounded-2xl p-8 shadow-lg max-w-6xl mx-auto">
+  <div class="flex items-center space-x-4 mb-8">
+    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+      <i class="fas fa-images text-red-600 text-xl"></i>
+    </div>
+    <h3 class="text-2xl font-semibold text-gray-900">Galeri Foto</h3>
+  </div>
 
-        <div class="grid grid-cols-3 gap-4">
-          <img src="img/IMG-20190728-WA0012.jpg" alt="Foto 1" class="w-full h-32 object-cover" />
-          <img src="img/IMG-20190730-WA0046.jpg" alt="Foto 2" class="w-full h-32 object-cover" />
-          <img src="img/IMG-20190730-WA0047.jpg" alt="Foto 3" class="w-full h-32 object-cover" />
-          <img src="img/IMG-20190730-WA0048.jpg" alt="Foto 4" class="w-full h-32 object-cover" />
-          <img src="img/IMG-20190730-WA0050.jpg" alt="Foto 5" class="w-full h-32 object-cover" />
-          <img src="img/IMG-20190818-WA0014.jpg" alt="Foto 6" class="w-full h-32 object-cover" />
-          <img src="img/g2-1.jpg" alt="Foto 6" class="w-full h-32 object-cover" />
-          <img src="img/g2-2.jpg" alt="Foto 6" class="w-full h-32 object-cover" />
-          <img src="img/g2-3.jpg" alt="Foto 6" class="w-full h-32 object-cover" />
-          <img src="img/g2-4.jpg" alt="Foto 6" class="w-full h-32 object-cover" />
-          <img src="img/g1-1.jpg" alt="Foto 6" class="w-full h-32 object-cover" />
-          <img src="img/g3-1.jpg" alt="Foto 6" class="w-full h-32 object-cover" />
-          <img src="img/g3-2.jpg" alt="Foto 6" class="w-full h-32 object-cover" />
-          <img src="img/g4-1.jpg" alt="Foto 6" class="w-full h-32 object-cover" />
-          <img src="img/g4-2.jpg" alt="Foto 6" class="w-full h-32 object-cover" />
-          <img src="img/g5-1.jpg" alt="Foto 6" class="w-full h-32 object-cover" />
-          <img src="img/g5-2.jpg" alt="Foto 6" class="w-full h-32 object-cover" />
-          <img src="img/g6-1.jpg" alt="Foto 6" class="w-full h-32 object-cover" />
-        </div>
+  <!-- Slideshow utama -->
+  <div class="relative">
+    <div class="overflow-hidden rounded-2xl shadow-lg">
+      <img id="slide-image" src="img/IMG-20190728-WA0012.jpg" alt="Foto 1" class="w-full h-96 object-cover rounded-2xl cursor-pointer transition-opacity duration-500" />
+    </div>
+    <div class="mt-4 text-center">
+      <h4 id="slide-title" class="text-lg font-semibold text-gray-800">Foto 1</h4>
+    </div>
 
-        <div class="text-center mt-8">
-          <a href="#" class="inline-flex items-center space-x-2 bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors">
-            <i class="fas fa-list"></i>
-            <span>Lihat Semua Galeri</span>
-          </a>
-        </div>
-      </section>
+    <!-- Navigasi panah -->
+    <button id="prev-btn" aria-label="Foto sebelumnya" class="absolute top-1/2 left-4 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-90 rounded-full p-2 shadow-md transition">
+      <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <button id="next-btn" aria-label="Foto berikutnya" class="absolute top-1/2 right-4 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-90 rounded-full p-2 shadow-md transition">
+      <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Thumbnail grid -->
+  <div class="grid grid-cols-6 gap-3 mt-6 select-none">
+    <!-- Thumbnail akan di-generate oleh JS -->
+  </div>
+
+  <div class="text-center mt-8">
+    <a href="#" class="inline-flex items-center space-x-2 bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors">
+      <i class="fas fa-list"></i>
+      <span>Lihat Semua Galeri</span>
+    </a>
+  </div>
+
+  <!-- Modal untuk gambar ukuran asli -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+    <div class="relative max-w-4xl max-h-full w-full rounded-lg overflow-hidden shadow-lg bg-white">
+      <button id="modal-close" aria-label="Tutup modal" class="absolute top-3 right-3 text-gray-700 hover:text-gray-900 text-3xl font-bold cursor-pointer z-50">&times;</button>
+      <img id="modal-image" src="" alt="" class="w-full h-auto max-h-[80vh] object-contain bg-gray-100" />
+      <div class="p-4 text-center">
+        <h5 id="modal-title" class="text-lg font-semibold text-gray-900"></h5>
+      </div>
+    </div>
+  </div>
+</section>
 
       <!--Layanan-->
       <section id="layanan" class="bg-white rounded-3xl p-8 shadow-2xl">
@@ -852,6 +869,65 @@
                 });
             });
         });
+
+
+         });
+
+    nextBtn.addEventListener('click', () => {
+      if (isTransitioning) return;
+      currentIndex = (currentIndex + 1) % images.length;
+      updateSlide();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', e => {
+      if (isTransitioning) return;
+      if(e.key === 'ArrowLeft') {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateSlide();
+      } else if(e.key === 'ArrowRight') {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateSlide();
+      } else if(e.key === 'Escape') {
+        closeModal();
+      }
+    });
+
+    // Klik gambar utama buka modal
+    slideImage.addEventListener('click', () => {
+      openModal();
+    });
+
+    // Buka modal
+    function openModal() {
+      const img = images[currentIndex];
+      modalImage.src = img.src;
+      modalImage.alt = img.alt;
+      modalTitle.textContent = img.title;
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+      document.body.style.overflow = 'hidden'; // disable scroll
+    }
+
+    // Tutup modal
+    function closeModal() {
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modal.classList.remove('opacity-100');
+      document.body.style.overflow = ''; // enable scroll
+    }
+
+    modalClose.addEventListener('click', closeModal);
+
+    // Tutup modal klik di luar gambar
+    modal.addEventListener('click', e => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Inisialisasi slide pertama
+    updateSlide();
+  });
     </script>
 
   <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
