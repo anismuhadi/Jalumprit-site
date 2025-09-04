@@ -710,7 +710,7 @@
 
 
       <!-- Galeri-->
-     <section id="galeri" class="bg-white rounded-2xl p-8 shadow-lg">
+    <section id="galeri" class="bg-white rounded-2xl p-8 shadow-lg">
     <div class="flex items-center space-x-4 mb-8">
       <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
         <i class="fas fa-images text-red-600 text-xl"></i>
@@ -724,27 +724,27 @@
       <button data-category="dkm" class="filter-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-semibold transition-colors hover:bg-gray-300">DKM</button>
     </div>
 
-    <div id="galeri class="relative overflow-hidden w-full h-80 rounded-xl shadow-md">
+    <div id="image-gallery" class="relative overflow-hidden w-full h-80 rounded-xl shadow-md">
       <div id="slides-container" class="flex transition-transform duration-500 ease-in-out h-full">
         <div data-category="pemuda" class="flex-shrink-0 w-full h-full flex transition-opacity duration-300 ease-in-out">
-            <img src="img/IMG-20190728-WA0012.jpg" alt="Foto Pemuda 1" class="w-full h-full object-cover" />
+            <img src="img/IMG-20190728-WA0012.jpg" alt="Foto Pemuda 1" class="w-full h-full object-cover cursor-pointer" />
         </div>
         <div data-category="pemuda" class="flex-shrink-0 w-full h-full flex transition-opacity duration-300 ease-in-out">
-            <img src="img/IMG-20190730-WA0046.jpg" alt="Foto Pemuda 2" class="w-full h-full object-cover" />
+            <img src="img/IMG-20190730-WA0046.jpg" alt="Foto Pemuda 2" class="w-full h-full object-cover cursor-pointer" />
         </div>
         
         <div data-category="dkm" class="flex-shrink-0 w-full h-full flex transition-opacity duration-300 ease-in-out">
-            <img src="img/IMG-20190730-WA0047.jpg" alt="Foto DKM 1" class="w-full h-full object-cover" />
+            <img src="img/IMG-20190730-WA0047.jpg" alt="Foto DKM 1" class="w-full h-full object-cover cursor-pointer" />
         </div>
         <div data-category="dkm" class="flex-shrink-0 w-full h-full flex transition-opacity duration-300 ease-in-out">
-            <img src="img/IMG-20190730-WA0048.jpg" alt="Foto DKM 2" class="w-full h-full object-cover" />
+            <img src="img/IMG-20190730-WA0048.jpg" alt="Foto DKM 2" class="w-full h-full object-cover cursor-pointer" />
         </div>
         <div data-category="dkm" class="flex-shrink-0 w-full h-full flex transition-opacity duration-300 ease-in-out">
-            <img src="img/IMG-20190730-WA0050.jpg" alt="Foto DKM 3" class="w-full h-full object-cover" />
+            <img src="img/IMG-20190730-WA0050.jpg" alt="Foto DKM 3" class="w-full h-full object-cover cursor-pointer" />
         </div>
         
         <div data-category="semua" class="flex-shrink-0 w-full h-full flex transition-opacity duration-300 ease-in-out">
-            <img src="img/IMG-20190818-WA0014.jpg" alt="Foto Semua 1" class="w-full h-full object-cover" />
+            <img src="img/IMG-20190818-WA0014.jpg" alt="Foto Semua 1" class="w-full h-full object-cover cursor-pointer" />
         </div>
 
       </div>
@@ -757,7 +757,7 @@
       </button>
     </div>
 
-    <div id="galeri" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50 hidden">
+    <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50 hidden">
       <div class="relative max-w-full max-h-full">
         <img id="modal-image" src="" alt="Gambar ukuran asli" class="max-w-full max-h-[80vh]" />
         <button id="close-modal" class="absolute top-4 right-4 text-white text-3xl hover:text-gray-300 transition-colors focus:outline-none">
@@ -870,60 +870,36 @@
         });
 
 //slide
-    document.addEventListener('DOMContentLoaded', function() {
-        // Logika untuk menu mobile (sudah ada)
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuClose = document.getElementById('mobile-menu-close');
-
-        if (mobileMenuButton && mobileMenu && mobileMenuClose) {
-            mobileMenuButton.addEventListener('click', function() {
-                mobileMenu.classList.remove('translate-x-full');
-                mobileMenu.classList.add('translate-x-0');
-            });
-            mobileMenuClose.addEventListener('click', function() {
-                mobileMenu.classList.remove('translate-x-0');
-                mobileMenu.classList.add('translate-x-full');
-            });
-        }
-
+     document.addEventListener('DOMContentLoaded', function() {
         // --- Logika untuk Galeri Filter, Slider, dan Modal ---
         const slidesContainer = document.getElementById('slides-container');
         const prevButton = document.getElementById('prev-slide');
         const nextButton = document.getElementById('next-slide');
         const filterButtons = document.querySelectorAll('.filter-btn');
-        const allSlides = slidesContainer.querySelectorAll('[data-category]');
+        const allSlides = slidesContainer.querySelectorAll('div[data-category]');
         let currentSlide = 0;
         let visibleSlides = [];
 
         function filterAndShowSlides(category) {
             visibleSlides = [];
-            let firstVisibleIndex = -1;
-
-            allSlides.forEach((slide, index) => {
+            
+            allSlides.forEach((slide) => {
                 const slideCategory = slide.getAttribute('data-category');
                 if (category === 'semua' || slideCategory === category) {
-                    slide.style.display = 'flex'; // Tampilkan elemen
+                    slide.style.display = 'flex';
                     visibleSlides.push(slide);
-                    if (firstVisibleIndex === -1) {
-                        firstVisibleIndex = index;
-                    }
                 } else {
-                    slide.style.display = 'none'; // Sembunyikan elemen
+                    slide.style.display = 'none';
                 }
             });
             
-            // Atur ulang posisi slide agar yang pertama terlihat
             currentSlide = 0;
             updateSlidePosition();
-            
-            // Perbarui event listener untuk gambar yang terlihat
             updateImageClickListeners();
         }
 
         function updateSlidePosition() {
             if (visibleSlides.length > 0) {
-                // Cari posisi elemen slide yang sedang aktif di antara semua slide
                 let activeSlideIndex = Array.from(allSlides).indexOf(visibleSlides[currentSlide]);
                 slidesContainer.style.transform = `translateX(-${activeSlideIndex * 100}%)`;
             } else {
@@ -954,8 +930,10 @@
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
                 // Perbarui tampilan tombol
-                filterButtons.forEach(btn => btn.classList.remove('bg-indigo-600', 'text-white'));
-                filterButtons.forEach(btn => btn.classList.add('bg-gray-200', 'text-gray-700'));
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-indigo-600', 'text-white');
+                    btn.classList.add('bg-gray-200', 'text-gray-700');
+                });
                 button.classList.remove('bg-gray-200', 'text-gray-700');
                 button.classList.add('bg-indigo-600', 'text-white');
 
@@ -977,7 +955,7 @@
         });
         
         // Logika Modal
-        const modal = document.getElementById('galeri');
+        const modal = document.getElementById('gallery-modal');
         const modalImage = document.getElementById('modal-image');
         const closeModalButton = document.getElementById('close-modal');
 
@@ -987,7 +965,7 @@
         });
 
         modal.addEventListener('click', (e) => {
-            if (e.target.id === 'galeri') {
+            if (e.target.id === 'gallery-modal') {
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
             }
