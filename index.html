@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
 <head>
@@ -64,13 +63,10 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-
-    
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-  <!-- Navbar -->
   <nav class="bg-white shadow-lg fixed w-full z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between h-20">
@@ -84,7 +80,6 @@
         </div>
         
         <div class="hidden lg:flex items-center space-x-8">
-          <!-- Profil Dropdown -->
           <div class="relative group">
             <button class="inline-flex items-center space-x-1 font-semibold text-gray-700 hover:text-indigo-600 transition-colors">
               <i class="fas fa-landmark"></i>
@@ -98,7 +93,6 @@
             </div>
           </div>
 
-          <!-- Organisasi Dropdown -->
           <div class="relative group">
             <button class="inline-flex items-center space-x-1 font-semibold text-gray-700 hover:text-indigo-600 transition-colors">
               <i class="fas fa-users"></i>
@@ -111,7 +105,6 @@
             </div>
           </div>
 
-          <!-- Informasi Dropdown -->
           <div class="relative group">
             <button class="inline-flex items-center space-x-1 font-semibold text-gray-700 hover:text-indigo-600 transition-colors">
               <i class="fas fa-newspaper"></i>
@@ -129,7 +122,6 @@
             <span>Galeri</span>
           </a>
 
-          <!-- Layanan Dropdown -->
           <div class="relative group">
             <button class="inline-flex items-center space-x-1 font-semibold text-gray-700 hover:text-indigo-600 transition-colors">
               <i class="fas fa-hands-helping"></i>
@@ -147,7 +139,6 @@
           </a>
         </div>
 
-        <!-- Mobile menu button -->
         <div id ="mobile-menu-toggle" class="flex items-center lg:hidden">
           <button id="mobile-menu-button" class="text-gray-700 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-600 p-2 rounded-lg">
             <i class="fas fa-bars text-2xl"></i>
@@ -156,12 +147,6 @@
       </div>
     </div>
 
-  
-     
-        
-       
-   
-    <!-- Menu Mobile -->
     <div id="mobile-menu" class="fixed inset-y-0 right-0 w-64 bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 lg:hidden">
         <div class="flex justify-end p-4">
             <button id="mobile-menu-close" class="text-gray-600 focus:outline-none">
@@ -169,7 +154,6 @@
             </button>
         </div>
         <nav class="px-6 py-6 space-y-4">
-            <!-- Profil Dropdown -->
             <details class="group">
                 <summary class="font-semibold cursor-pointer flex justify-between items-center py-3 px-4 bg-gray-50 rounded-lg">
                     <span><i class="fas fa-landmark mr-3"></i>Profil</span>
@@ -182,7 +166,6 @@
                 </div>
             </details>
 
-            <!-- Organisasi Dropdown -->
             <details class="group">
                 <summary class="font-semibold cursor-pointer flex justify-between items-center py-3 px-4 bg-gray-50 rounded-lg">
                     <span><i class="fas fa-users mr-3"></i>Organisasi</span>
@@ -194,7 +177,6 @@
                 </div>
             </details>
 
-            <!-- Informasi Dropdown -->
             <details class="group">
                 <summary class="font-semibold cursor-pointer flex justify-between items-center py-3 px-4 bg-gray-50 rounded-lg">
                     <span><i class="fas fa-newspaper mr-3"></i>Informasi</span>
@@ -206,12 +188,10 @@
                 </div>
             </details>
 
-            <!-- Galeri Link -->
             <a href="#galeri" class="block font-semibold py-3 px-4 bg-gray-50 rounded-lg">
                 <i class="fas fa-images mr-3"></i>Galeri
             </a>
 
-            <!-- Layanan Dropdown -->
             <details class="group">
                 <summary class="font-semibold cursor-pointer flex justify-between items-center py-3 px-4 bg-gray-50 rounded-lg">
                     <span><i class="fas fa-hands-helping mr-3"></i>Layanan</span>
@@ -223,7 +203,6 @@
                 </div>
             </details>
 
-            <!-- Kontak Link -->
             <a href="#kontak" class="block bg-indigo-600 text-white py-3 px-4 rounded-lg text-center font-semibold">
                 <i class="fas fa-phone-alt mr-2"></i>Hubungi Kami
             </a>
@@ -231,69 +210,59 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section class="hero-pattern text-white pt-32 pb-20">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
-      
-      <!-- Teks Hero -->
-      <div class="space-y-6">
-        <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
-          Selamat Datang di<br>
-          <span class="text-yellow-300">Jalumprit Site</span>
-        </h1>
-        <p class="text-xl opacity-90 leading-relaxed">
-          Portal komunitas yang membangun sinergi dan kemajuan bersama. 
-          Mari kita wujudkan lingkungan yang harmonis dan sejahtera.
-        </p>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        
+        <div class="space-y-6">
+          <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
+            Selamat Datang di<br>
+            <span class="text-yellow-300">Jalumprit Site</span>
+          </h1>
+          <p class="text-xl opacity-90 leading-relaxed">
+            Portal komunitas yang membangun sinergi dan kemajuan bersama.
+            Mari kita wujudkan lingkungan yang harmonis dan sejahtera.
+          </p>
 
-        <!-- Tombol CTA -->
-        <div class="flex flex-wrap gap-4">
-          <a 
-            href="#profil" 
-            class="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold 
-                   hover:bg-gray-100 transition-colors"
-          >
-            <i class="fas fa-explore mr-2"></i>Explore Sekarang
-          </a>
-          <a 
-            href="#kontak" 
-            class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold 
-                   hover:bg-white hover:text-indigo-600 transition-colors"
-          >
-            <i class="fas fa-users mr-2"></i>Bergabung
-          </a>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="#profil"
+              class="bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold
+                    hover:bg-gray-100 transition-colors"
+            >
+              <i class="fas fa-explore mr-2"></i>Explore Sekarang
+            </a>
+            <a
+              href="#kontak"
+              class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold
+                    hover:bg-white hover:text-indigo-600 transition-colors"
+            >
+              <i class="fas fa-users mr-2"></i>Bergabung
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="animate-float">
+            <img
+              src="img/tes.jpg"
+              alt="Ilustrasi komunitas Jalumprit dengan orang-orang berkumpul dan bekerja sama dalam lingkungan yang harmonis"
+              class="rounded-2xl shadow-2xl"
+            />
+          </div>
         </div>
       </div>
-
-      <!-- Gambar Hero -->
-      <div class="relative">
-        <div class="animate-float">
-          <img 
-            src="img/tes.jpg" 
-            alt="Ilustrasi komunitas Jalumprit dengan orang-orang berkumpul dan bekerja sama dalam lingkungan yang harmonis" 
-            class="rounded-2xl shadow-2xl" 
-          />
-        </div>
-
-        
-      
     </div>
-  </div>
-</section>
+  </section>
 
-
-  <!-- Main content -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 py-16">
 
-    <!-- Profil Section -->
     <section id="profil" class="space-y-16">
       <div class="text-center">
         <h2 class="text-4xl font-bold gradient-text inline-block">Profil Jalumprit</h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Menjelajahi sejarah, visi, dan wilayah komunitas Jalumprit</p>
       </div>
 
-      <!-- Sejarah -->
       <article id="sejarah" class="bg-white rounded-2xl p-8 shadow-lg">
         <div class="flex items-center space-x-4 mb-6">
           <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
@@ -331,7 +300,7 @@
           </div>
           
           <div class="relative">
-            <img src="img/1.png"Foto sejarah komunitas Jalumprit menunjukkan perkembangan dari tahun ke tahun" class="rounded-lg shadow-md" />
+            <img src="img/1.png" alt="Foto sejarah komunitas Jalumprit menunjukkan perkembangan dari tahun ke tahun" class="rounded-lg shadow-md" />
             <div class="absolute bottom-4 left-4 bg-black bg-opacity-70 text-white p-3 rounded-lg">
               <p class="text-sm">Foto dokumentasi tahun 2016</p>
             </div>
@@ -339,7 +308,6 @@
         </div>
       </article>
 
-      <!-- Visi Misi -->
       <article id="visi-misi" class="bg-white rounded-2xl p-8 shadow-lg">
         <div class="flex items-center space-x-4 mb-6">
           <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
@@ -349,7 +317,6 @@
         </div>
 
         <div class="grid md:grid-cols-2 gap-8">
-          <!-- Visi -->
           <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-xl">
             <div class="flex items-center space-x-3 mb-4">
               <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center">
@@ -362,7 +329,6 @@
             </p>
           </div>
 
-          <!-- Misi -->
           <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl">
             <div class="flex items-center space-x-3 mb-4">
               <div class="w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center">
@@ -392,7 +358,6 @@
         </div>
       </article>
 
-      <!-- Peta Wilayah -->
       <article id="peta-wilayah" class="bg-white rounded-2xl p-8 shadow-lg">
         <div class="flex items-center space-x-4 mb-6">
           <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
@@ -454,14 +419,12 @@
       </article>
     </section>
 
-    <!-- Organisasi Section -->
     <section id="organisasi" class="space-y-16">
       <div class="text-center">
         <h2 class="text-4xl font-bold gradient-text inline-block">Struktur Organisasi</h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Menghadirkan kepengurusan yang solid dan profesional</p>
       </div>
 
-      <!-- DKM -->
       <article id="dkm" class="bg-white rounded-2xl p-8 shadow-lg">
         <div class="flex items-center space-x-4 mb-8">
           <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
@@ -513,20 +476,18 @@
               <p class="text-green-600 font-medium">Sekretaris</p>
               <p class="text-sm text-gray-600 mt-2">Menjabat sejak 2021</p>
             </div>
-                     <div class="flex justify-center items-center mt-8">
-  <a 
-    href="dkm.html" 
-    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out"
-  >
-    <i class="fas fa-users mr-2"></i>Lihat Selengkapnya
-  </a>
-</div> 
           </div>
-
         </div>
+        <div class="flex justify-center items-center mt-8">
+            <a
+              href="dkm.html"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out"
+            >
+              <i class="fas fa-users mr-2"></i>Lihat Selengkapnya
+            </a>
+          </div>
       </article>
 
-      <!-- Pemuda -->
       <article id="pemuda" class="bg-white rounded-2xl p-8 shadow-lg">
         <div class="flex items-center space-x-4 mb-8">
           <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
@@ -578,29 +539,26 @@
               <p class="text-blue-600 font-medium">Bendahara</p>
               <p class="text-sm text-gray-600 mt-2">Menjabat sejak 20XX</p>
             </div>
-                      <div class="flex justify-center items-center mt-8">
-  <a 
-    href="pemuda.html" 
-    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out"
-  >
-    <i class="fas fa-users mr-2"></i>Lihat Selengkapnya
-  </a>
-</div>
           </div>
-
         </div>
+        <div class="flex justify-center items-center mt-8">
+            <a
+              href="pemuda.html"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out"
+            >
+              <i class="fas fa-users mr-2"></i>Lihat Selengkapnya
+            </a>
+          </div>
       </article>
       
     </section>
 
-    <!-- Informasi Section -->
     <section id="informasi" class="space-y-16">
       <div class="text-center">
         <h2 class="text-4xl font-bold gradient-text inline-block">Informasi Terkini</h2>
         <p class="text-gray-600 mt-4 max-w-2xl mx-auto">Update terbaru kegiatan dan berita komunitas</p>
       </div>
 
-      <!-- Berita -->
       <article id="berita" class="bg-white rounded-2xl p-8 shadow-lg">
         <div class="flex items-center space-x-4 mb-8">
           <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
@@ -610,7 +568,6 @@
         </div>
 
         <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
-          <!-- Berita 1 -->
           <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
             <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a27160b8-73c6-4f9c-8973-20930d91d51c.png" alt="Kegiatan pelatihan wirausaha pemuda Jalumprit dengan peserta yang antusias" class="w-full h-48 object-cover" />
             <div class="p-6">
@@ -624,7 +581,6 @@
             </div>
           </div>
 
-          <!-- Berita 2 -->
           <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
             <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3f0d8924-498f-4370-82c3-0db390d3e8f3.png" alt="Kegiatan bakti sosial DKM Jalumprit membagikan sembako kepada warga" class="w-full h-48 object-cover" />
             <div class="p-6">
@@ -638,7 +594,6 @@
             </div>
           </div>
 
-          <!-- Berita 3 -->
           <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
             <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e7e507b9-13fa-43de-b493-d76c3f5b7765.png" alt="Turnamen futsal antar RT yang diselenggarakan oleh pemuda Jalumprit" class="w-full h-48 object-cover" />
             <div class="p-6">
@@ -652,206 +607,12 @@
             </div>
           </div>
         </div>
-
-        <div class="text-center mt-8">
-          <a href="#" class="inline-flex items-center space-x-2 bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors">
-            <i class="fas fa-list"></i>
-            <span>Lihat Semua Berita</span>
-          </a>
-        </div>
       </article>
-
-      <!-- Agenda -->
-      <article id="agenda" class="bg-white rounded-2xl p-8 shadow-lg">
-        <div class="flex items-center space-x-4 mb-8">
-          <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-            <i class="fas fa-calendar-alt text-purple-600 text-xl"></i>
-          </div>
-          <h3 class="text-2xl font-semibold text-gray-900">Agenda Kegiatan</h3>
-        </div>
-
-        <div class="overflow-x-auto">
-          <table class="w-full">
-            <thead>
-              <tr class="bg-gray-50">
-                <th class="px-6 py-4 text-left font-semibold text-gray-700">Tanggal</th>
-                <th class="px-6 py-4 text-left font-semibold text-gray-700">Kegiatan</th>
-                <th class="px-6 py-4 text-left font-semibold text-gray-700">Lokasi</th>
-                <th class="px-6 py-4 text-left font-semibold text-gray-700">Waktu</th>
-                <th class="px-6 py-4 text-left font-semibold text-gray-700">Status</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-200">
-              <tr class="hover:bg-gray-50">
-                <td class="px-6 py-4 font-medium">20 Juni 2024</td>
-                <td class="px-6 py-4">Rapat Koordinasi Pemuda</td>
-                <td class="px-6 py-4">Aula Pemuda</td>
-                <td class="px-6 py-4">19:00 WIB</td>
-                <td class="px-6 py-4"><span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Akan Datang</span></td>
-              </tr>
-              <tr class="hover:bg-gray-50">
-                <td class="px-6 py-4 font-medium">25 Juni 2024</td>
-                <td class="px-6 py-4">Pengajian Rutin DKM</td>
-                <td class="px-6 py-4">Masjid Baitul Maal</td>
-                <td class="px-6 py-4">20:00 WIB</td>
-                <td class="px-6 py-4"><span class="bg-blue-100 text-blue-800 px-3 py-1
-                  rounded-full text-sm">Akan Datang</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="text-center mt-8">
-          <a href="#" class="inline-flex items-center space-x-2 bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors">
-            <i class="fas fa-list"></i>
-            <span>Lihat Semua Agenda</span>
-          </a>
-        </div>
-      </article>
-
-
-
     </section>
-
-
-      <!-- Galeri-->
-       <section id="galeri" class="bg-white rounded-2xl p-8 shadow-lg max-w-6xl mx-auto">
-  <div class="flex items-center space-x-4 mb-8">
-    <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
-      <i class="fas fa-images text-red-600 text-xl"></i>
-    </div>
-    <h3 class="text-2xl font-semibold text-gray-900">Galeri Foto</h3>
-  </div>
-
-  <!-- Slideshow utama -->
-  <div class="relative">
-    <div class="overflow-hidden rounded-2xl shadow-lg">
-      <img id="slide-image" src="img/IMG-20190728-WA0012.jpg" alt="Foto 1" class="w-full h-96 object-cover rounded-2xl cursor-pointer transition-opacity duration-500" />
-    </div>
-    <div class="mt-4 text-center">
-      <h4 id="slide-title" class="text-lg font-semibold text-gray-800">Foto 1</h4>
-    </div>
-
-    <!-- Navigasi panah -->
-    <button id="prev-btn" aria-label="Foto sebelumnya" class="absolute top-1/2 left-4 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-90 rounded-full p-2 shadow-md transition">
-      <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="15 18 9 12 15 6"></polyline>
-      </svg>
-    </button>
-    <button id="next-btn" aria-label="Foto berikutnya" class="absolute top-1/2 right-4 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-90 rounded-full p-2 shadow-md transition">
-      <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="9 18 15 12 9 6"></polyline>
-      </svg>
-    </button>
-  </div>
-
-  <!-- Thumbnail grid -->
-  <div class="grid grid-cols-6 gap-3 mt-6 select-none">
-    <!-- Thumbnail akan di-generate oleh JS -->
-  </div>
-
-  <div class="text-center mt-8">
-    <a href="#" class="inline-flex items-center space-x-2 bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition-colors">
-      <i class="fas fa-list"></i>
-      <span>Lihat Semua Galeri</span>
-    </a>
-  </div>
-
-  <!-- Modal untuk gambar ukuran asli -->
-  <div id="modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300 z-50">
-    <div class="relative max-w-4xl max-h-full w-full rounded-lg overflow-hidden shadow-lg bg-white">
-      <button id="modal-close" aria-label="Tutup modal" class="absolute top-3 right-3 text-gray-700 hover:text-gray-900 text-3xl font-bold cursor-pointer z-50">&times;</button>
-      <img id="modal-image" src="" alt="" class="w-full h-auto max-h-[80vh] object-contain bg-gray-100" />
-      <div class="p-4 text-center">
-        <h5 id="modal-title" class="text-lg font-semibold text-gray-900"></h5>
-      </div>
-    </div>
-  </div>
-</section>
-
-      <!--Layanan-->
-      <section id="layanan" class="bg-white rounded-3xl p-8 shadow-2xl">
-            <div class="flex flex-col items-center text-center mb-8">
-                <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full flex items-center justify-center shadow-lg mb-4">
-                    <i class="fas fa-hands-helping text-white text-3xl"></i>
-                </div>
-                <h3 class="text-3xl font-bold text-gray-900 mb-2">Layanan Kami</h3>
-                <p class="text-gray-500 text-sm md:text-base max-w-xl">Kami siap membantu dengan berbagai layanan. Pilih layanan di bawah ini untuk memulai.</p>
-            </div>
-    
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Portal Aduan Card -->
-                <div id="layanan" class="bg-gradient-to-br from-red-100 to-rose-100 p-8 rounded-2xl shadow-lg transform transition-transform duration-200 hover:scale-105 hover:shadow-2xl cursor-pointer">
-                    <div class="flex items-center space-x-4 mb-4">
-                        <div class="w-14 h-14 bg-red-500 rounded-full flex items-center justify-center">
-                            <i class="fas fa-comment-dots text-white text-2xl"></i>
-                        </div>
-                        <h4 class="text-2xl font-bold text-red-800">Portal Aduan</h4>
-                    </div>
-                    <p class="text-gray-700 leading-relaxed">Laporkan masalah, berikan masukan, atau sampaikan keluhan Anda. Kami akan menindaklanjutinya dengan cepat dan profesional.</p>
-                    <a href="portal-aduan.html" class="mt-4 inline-block text-red-600 font-semibold hover:text-red-700 transition-colors">
-                        Sampaikan Aduan <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-    
-                <!-- Bantuan Card -->
-                <div id="layanan" class="bg-gradient-to-br from-sky-100 to-blue-100 p-8 rounded-2xl shadow-lg transform transition-transform duration-200 hover:scale-105 hover:shadow-2xl cursor-pointer">
-                    <div class="flex items-center space-x-4 mb-4">
-                        <div class="w-14 h-14 bg-blue-500 rounded-full flex items-center justify-center">
-                            <i class="fas fa-question-circle text-white text-2xl"></i>
-                        </div>
-                        <h4 class="text-2xl font-bold text-blue-800">Pusat Bantuan</h4>
-                    </div>
-                    <p class="text-gray-700 leading-relaxed">Temukan jawaban atas pertanyaan umum atau hubungi tim dukungan kami untuk mendapatkan bantuan langsung.</p>
-                    <a href="bantuan.html" class="mt-4 inline-block text-blue-600 font-semibold hover:text-blue-700 transition-colors">
-                        Cari Bantuan <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-      <!-- Kontak -->
-      <article id="kontak" class="bg-white rounded-2xl p-8 shadow-lg">
-        <div class="flex items-center space-x-4 mb-8">
-          <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-            <i class="fas fa-phone text-green-600 text-xl"></i>
-          </div>
-          <h3 class="text-2xl font-semibold text-gray-900">Kontak Kami</h3>
-        </div>
-
-        <div class="grid grid-cols-2 gap-6">
-          <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
-              <i class="fas fa-map-marker-alt text-gray-600 text-xl"></i>
-            </div>
-            <div class="text-gray-600 text-sm">
-              <p class="font-semibold">Alamat:</p>
-              <p>Jl. Raya Serdang - Waringinkurung km.4 Kp.Jalumprit</p>
-            </div>
-          </div>          
-          <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center">
-              <i class="fas fa-phone text-gray-600 text-xl"></i>
-            </div>
-            <div class="text-gray-600 text-sm">
-              <p class="font-semibold">Telepon:</p>
-              <p>(0341) 421-421</p>
-            </div>
-          </div>
-        </div>
-      </article>
-    </div>
   </main>
 
-  <footer class="bg-gray-800 text-white py-4">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2025 Jalumprit | Powered by Anis Muhadi. All rights reserved.</p>
-    </div>
-  </footer>
-
-   <script>
-
-     document.addEventListener('DOMContentLoaded', function() {
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileMenuClose = document.getElementById('mobile-menu-close');
@@ -866,92 +627,6 @@
             mobileMenu.classList.add('translate-x-full');
         });
     });
-
-     
-        document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const toggleButton = document.getElementById('mobile-menu-toggle');
-            const closeButton = document.getElementById('mobile-menu-close');
-
-            const toggleMenu = () => {
-                mobileMenu.classList.toggle('translate-x-full');
-            };
-
-            toggleButton.addEventListener('click', toggleMenu);
-            closeButton.addEventListener('click', toggleMenu);
-
-            // Close menu when a link is clicked
-            const navLinks = mobileMenu.querySelectorAll('a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    toggleMenu();
-                });
-            });
-        });
-
-
-         });
-
-    nextBtn.addEventListener('click', () => {
-      if (isTransitioning) return;
-      currentIndex = (currentIndex + 1) % images.length;
-      updateSlide();
-    });
-
-    // Keyboard navigation
-    document.addEventListener('keydown', e => {
-      if (isTransitioning) return;
-      if(e.key === 'ArrowLeft') {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateSlide();
-      } else if(e.key === 'ArrowRight') {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateSlide();
-      } else if(e.key === 'Escape') {
-        closeModal();
-      }
-    });
-
-    // Klik gambar utama buka modal
-    slideImage.addEventListener('click', () => {
-      openModal();
-    });
-
-    // Buka modal
-    function openModal() {
-      const img = images[currentIndex];
-      modalImage.src = img.src;
-      modalImage.alt = img.alt;
-      modalTitle.textContent = img.title;
-      modal.classList.remove('opacity-0', 'pointer-events-none');
-      modal.classList.add('opacity-100');
-      document.body.style.overflow = 'hidden'; // disable scroll
-    }
-
-    // Tutup modal
-    function closeModal() {
-      modal.classList.add('opacity-0', 'pointer-events-none');
-      modal.classList.remove('opacity-100');
-      document.body.style.overflow = ''; // enable scroll
-    }
-
-    modalClose.addEventListener('click', closeModal);
-
-    // Tutup modal klik di luar gambar
-    modal.addEventListener('click', e => {
-      if (e.target === modal) {
-        closeModal();
-      }
-    });
-
-    // Inisialisasi slide pertama
-    updateSlide();
-  });
-    </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
-</body> 
+  </script>
+</body>
 </html>
-
-
-
