@@ -28,11 +28,11 @@
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
     
-    .gallery-scroll::-webkit-scrollbar {
+    .galeri-scroll::-webkit-scrollbar {
       height: 8px;
     }
     
-    .gallery-scroll::-webkit-scrollbar-thumb {
+    .galeri-scroll::-webkit-scrollbar-thumb {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       border-radius: 4px;
     }
@@ -724,7 +724,7 @@
       <button data-category="dkm" class="filter-btn bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-semibold transition-colors hover:bg-gray-300">DKM</button>
     </div>
 
-    <div id="image-gallery" class="relative overflow-hidden w-full h-80 rounded-xl shadow-md">
+    <div id="galeri class="relative overflow-hidden w-full h-80 rounded-xl shadow-md">
       <div id="slides-container" class="flex transition-transform duration-500 ease-in-out h-full">
         <div data-category="pemuda" class="flex-shrink-0 w-full h-full flex transition-opacity duration-300 ease-in-out">
             <img src="img/IMG-20190728-WA0012.jpg" alt="Foto Pemuda 1" class="w-full h-full object-cover" />
@@ -757,7 +757,7 @@
       </button>
     </div>
 
-    <div id="gallery-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50 hidden">
+    <div id="galeri" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50 hidden">
       <div class="relative max-w-full max-h-full">
         <img id="modal-image" src="" alt="Gambar ukuran asli" class="max-w-full max-h-[80vh]" />
         <button id="close-modal" class="absolute top-4 right-4 text-white text-3xl hover:text-gray-300 transition-colors focus:outline-none">
@@ -977,7 +977,7 @@
         });
         
         // Logika Modal
-        const modal = document.getElementById('gallery-modal');
+        const modal = document.getElementById('galeri');
         const modalImage = document.getElementById('modal-image');
         const closeModalButton = document.getElementById('close-modal');
 
@@ -987,7 +987,7 @@
         });
 
         modal.addEventListener('click', (e) => {
-            if (e.target.id === 'gallery-modal') {
+            if (e.target.id === 'galeri') {
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
             }
@@ -1001,6 +1001,5 @@
   <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 </body> 
 </html>
-
 
 
